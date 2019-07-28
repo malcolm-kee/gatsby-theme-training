@@ -1,3 +1,15 @@
 module.exports = {
-  plugins: [{ resolve: `gatsby-theme-minimal`, options: {} }],
-}
+  siteMetadata: {
+    title: `Introduction to React JS`,
+    author: `Malcolm Kee`,
+    siteUrl: `http://siteurlplaceholder.com`,
+    description: `Training description placeholder`
+  },
+  plugins: [
+    { resolve: `gatsby-theme-minimal`, options: {} },
+    {
+      resolve: `gatsby-theme-training`,
+      options: {}
+    }
+  ]
+};

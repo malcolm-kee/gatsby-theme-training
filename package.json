@@ -9,6 +9,7 @@
   },
   "workspaces": [
     "gatsby-theme-minimal",
-    "example"
+    "example",
+    "gatsby-theme-training"
   ]
 }

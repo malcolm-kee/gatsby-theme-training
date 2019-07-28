@@ -1,0 +1,9 @@
+@import './variable';
+
+.main {
+  margin-top: $appbar-height;
+  @media screen and (min-width: $mobile-width) {
+    display: grid;
+    grid-template-columns: 1fr 230px;
+  }
+}
