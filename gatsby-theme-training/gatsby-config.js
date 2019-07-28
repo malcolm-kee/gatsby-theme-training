@@ -4,7 +4,7 @@ module.exports = ({ lessonPath = 'lessons' }) => {
       title: `Training Title Placeholder`,
       author: `Author Placeholder`,
       siteUrl: `http://siteurlplaceholder.com`,
-      description: `Training description placeholder`
+      description: `Training description placeholder`,
     },
     plugins: [
       `gatsby-plugin-sass`,
@@ -12,11 +12,34 @@ module.exports = ({ lessonPath = 'lessons' }) => {
         resolve: `gatsby-source-filesystem`,
         options: {
           path: lessonPath,
-          name: 'lessons'
-        }
+          name: 'lessons',
+        },
       },
       `gatsby-plugin-react-helmet`,
-      `gatsby-plugin-mdx`
-    ]
+      `gatsby-plugin-sharp`,
+      {
+        resolve: `gatsby-plugin-mdx`,
+        options: {
+          gatsbyRemarkPlugins: [
+            `gatsby-remark-copy-linked-files`,
+            `gatsby-remark-external-links`,
+            {
+              resolve: `gatsby-remark-autolink-headers`,
+              options: {
+                className: `header-link-icon`,
+              },
+            },
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 800,
+                withWebp: true,
+              },
+            },
+          ],
+        },
+      },
+      `gatsby-plugin-catch-links`,
+    ],
   };
 };
