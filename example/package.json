@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "gatsby": "^2.13.39",
-    "gatsby-theme-minimal": "^1.0.0",
     "gatsby-theme-training": "*",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

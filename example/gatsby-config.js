@@ -6,7 +6,6 @@ module.exports = {
     description: `Training description placeholder`
   },
   plugins: [
-    { resolve: `gatsby-theme-minimal`, options: {} },
     {
       resolve: `gatsby-theme-training`,
       options: {}
