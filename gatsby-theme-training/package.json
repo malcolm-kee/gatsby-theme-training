@@ -3,11 +3,16 @@
   "version": "0.1.1",
   "description": "A Gatsby theme for training materials",
   "main": "index.js",
+  "module": "index.es.js",
+  "jsnext:main": "index.es.js",
   "keywords": [
     "gatsby",
     "gatsby-theme",
     "gatsby-plugin"
   ],
+  "scripts": {
+    "build": "rollup -c"
+  },
   "author": "Malcolm Kee <malcolm.keeweesiong@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
@@ -40,5 +45,19 @@
   "homepage": "https://github.com/malcolm-kee/gatsby-theme-training/tree/master/gatsby-theme-training#readme",
   "bugs": {
     "url": "https://github.com/malcolm-kee/gatsby-theme-training/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@modular-css/rollup": "^24.2.2",
+    "rollup": "^1.17.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss-modules": "^2.0.1",
+    "rollup-plugin-scss": "^1.0.1"
   }
 }
