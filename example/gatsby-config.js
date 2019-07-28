@@ -9,6 +9,12 @@ module.exports = {
     {
       resolve: `gatsby-theme-training`,
       options: {}
+    },
+    {
+      resolve: `gatsby-plugin-eslint`,
+      options: {
+        exclude: /(node_modules|.cache|public|gatsby-theme-training)/
+      }
     }
   ]
 };

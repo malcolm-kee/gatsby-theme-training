@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "rollup -c"
+    "prepublishOnly": "rollup -c",
+    "develop": "rollup -c -w"
   },
   "author": "Malcolm Kee <malcolm.keeweesiong@gmail.com>",
   "license": "MIT",
