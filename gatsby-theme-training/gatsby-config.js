@@ -41,6 +41,7 @@ module.exports = ({ lessonPath = 'lessons' }) => {
         },
       },
       `gatsby-plugin-catch-links`,
+      `gatsby-plugin-netlify`,
     ],
   };
 };
