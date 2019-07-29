@@ -96,8 +96,8 @@ const Reset = () => {
         }
 
         html {
+          font: 112.5%/1.45em georgia, serif;
           font-family: ${fontFamily};
-          font-size: 14px;
           height: 100%;
           box-sizing: border-box;
         }

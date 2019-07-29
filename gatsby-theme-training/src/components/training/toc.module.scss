@@ -1,18 +1,5 @@
 @import './variable';
 
-.ctn {
-  font-family: $font;
-  padding: $space 0;
-  background-color: #eeeeee;
-
-  @media screen and (min-width: $mobile-width) {
-    position: fixed;
-    top: $appbar-height;
-    bottom: 0;
-    right: 0;
-  }
-}
-
 .inner {
   margin: 0px auto;
   padding-bottom: $ios-bottom-offset;

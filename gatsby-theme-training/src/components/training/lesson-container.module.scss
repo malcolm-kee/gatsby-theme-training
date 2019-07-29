@@ -3,14 +3,14 @@
 .ctn {
   font-family: $font;
   color: $text-color;
-  padding: $space * 2;
+  padding: $space * 4;
 
   h1 {
     color: rgba(0, 0, 0, 0.54);
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.1;
-    margin: 2rem 0;
+    margin: 1rem 0 2rem;
   }
 
   p,

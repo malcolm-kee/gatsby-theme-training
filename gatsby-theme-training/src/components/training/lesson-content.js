@@ -17,6 +17,12 @@ const LessonContent = styled.article`
     text-align: justify;
   }
 
+  ol,
+  ul {
+    margin: 1em 0;
+    padding-left: 30px;
+  }
+
   li {
     margin-bottom: 0.5em;
   }

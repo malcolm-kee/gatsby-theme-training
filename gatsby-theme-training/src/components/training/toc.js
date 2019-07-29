@@ -1,9 +1,10 @@
+import styled from '@emotion/styled';
 import cx from 'classnames';
 import { Link } from 'gatsby';
 import React from 'react';
 import ChevronIcon from './chevron-icon';
+import { appbarHeight, mobileWidth, space, tocWidth } from './styles';
 import {
-  ctn,
   inner,
   item,
   itemActive,
@@ -53,9 +54,22 @@ const TableOfContentsSection = ({ nodes, title, pathname }) => {
   );
 };
 
+const Nav = styled.nav`
+  padding: ${space}px 0;
+  background-color: #eeeeee;
+
+  @media screen and (min-width: ${mobileWidth}) {
+    position: fixed;
+    top: ${appbarHeight};
+    bottom: 0;
+    right: 0;
+    width: ${tocWidth};
+  }
+`;
+
 const Toc = ({ pathname, sections }) => {
   return (
-    <nav className={ctn}>
+    <Nav>
       <div className={inner}>
         <ol className={ol}>
           {sections.map(({ nodes, title }) => (
@@ -68,7 +82,7 @@ const Toc = ({ pathname, sections }) => {
           ))}
         </ol>
       </div>
-    </nav>
+    </Nav>
   );
 };
 

@@ -26,3 +26,6 @@ import { Button } from 'gatsby-theme-training';
 - MainContainer
 - Reset
 - Toolbar
+- ChevronIcon
+- EditIcon
+- EyeIcon
