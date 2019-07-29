@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-training",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "A Gatsby theme for training materials",
   "main": "index.js",
   "module": "index.es.js",
@@ -44,7 +44,7 @@
     "url": "https://github.com/malcolm-kee/gatsby-theme-training.git",
     "directory": "gatsby-theme-training"
   },
-  "homepage": "https://github.com/malcolm-kee/gatsby-theme-training/tree/master/gatsby-theme-training#readme",
+  "homepage": "https://github.com/malcolm-kee/gatsby-theme-training#readme",
   "bugs": {
     "url": "https://github.com/malcolm-kee/gatsby-theme-training/issues"
   },
