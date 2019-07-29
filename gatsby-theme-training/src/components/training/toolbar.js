@@ -1,7 +1,13 @@
-import cx from 'classnames';
-import React from 'react';
-import { toolbar } from './toolbar.module.scss';
+import styled from '@emotion/styled';
+import { space } from './styles';
 
-const Toolbar = ({ className, ...props }) => <div className={cx(className, toolbar)} {...props} />;
+const Toolbar = styled.div`
+  margin: ${space * 3}px 0;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 ${space}px;
+  justify-content: flex-end;
+`;
 
 export default Toolbar;

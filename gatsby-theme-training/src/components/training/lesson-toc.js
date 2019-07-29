@@ -1,17 +1,31 @@
+import styled from '@emotion/styled';
 import React from 'react';
-import { li, toc, ul } from './lesson-toc.module.scss';
+
+const Wrapper = styled.div`
+  line-height: 1.3;
+`;
+
+const List = styled.ul`
+  margin: 0 0 0 1.75rem;
+  padding: 0;
+  list-style-position: outside;
+`;
+
+const Item = styled.li`
+  margin-bottom: 0.8rem;
+`;
 
 const LessonToc = ({ items }) => {
   return Array.isArray(items) && items.length > 0 ? (
-    <div className={toc}>
-      <ul className={ul}>
+    <Wrapper>
+      <List>
         {items.map(item => (
-          <li className={li} key={item.url}>
+          <Item key={item.url}>
             <a href={item.url}>{item.title}</a>
-          </li>
+          </Item>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Wrapper>
   ) : null;
 };
 

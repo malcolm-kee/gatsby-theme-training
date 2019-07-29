@@ -15,6 +15,7 @@ module.exports = ({ lessonPath = 'lessons' }) => {
           name: 'lessons',
         },
       },
+      `gatsby-plugin-emotion`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-sharp`,
       {

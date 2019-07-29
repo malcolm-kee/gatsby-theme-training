@@ -23,3 +23,6 @@ import { Button } from 'gatsby-theme-training';
 - Appbar
 - Button
 - Seo
+- MainContainer
+- Reset
+- Toolbar

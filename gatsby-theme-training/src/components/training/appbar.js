@@ -1,26 +1,42 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import React from 'react';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { Link } from 'gatsby';
 import { getContrastTextColor } from '../../lib/color';
-import { bar } from './appbar.module.scss';
+import { appbarHeight, space } from './styles';
 
 const Appbar = ({
   linkTarget = '/',
   backgroundColor = '#e44d26',
   color = getContrastTextColor(backgroundColor),
+  children,
 }) => {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
-    <header className={bar} style={{ backgroundColor, color }}>
-      <Link to={linkTarget}>{data.site.siteMetadata.title}</Link>
+    <header
+      css={css`
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0 auto;
+        padding: ${space}px ${space * 2}px;
+        min-height: ${appbarHeight};
+        display: flex;
+        font-size: 1.3rem;
+        align-items: center;
+        background-color: ${backgroundColor};
+        color: ${color};
+      `}
+    >
+      <Link
+        css={css`
+          color: inherit;
+          text-decoration: none;
+        `}
+        to={linkTarget}
+      >
+        {children}
+      </Link>
     </header>
   );
 };

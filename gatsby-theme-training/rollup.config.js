@@ -24,7 +24,9 @@ export default {
   plugins: [
     scss(),
     postcss(),
-    external(),
+    external({
+      includeDependencies: true,
+    }),
     babel({
       exclude: 'node_modules/**',
     }),

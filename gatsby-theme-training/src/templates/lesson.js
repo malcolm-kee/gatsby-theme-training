@@ -4,6 +4,7 @@ import React from 'react';
 import Button from '../components/training/button';
 import ChevronIcon from '../components/training/chevron-icon';
 import LessonContainer from '../components/training/lesson-container';
+import LessonContent from '../components/training/lesson-content';
 import LessonToc from '../components/training/lesson-toc';
 import Seo from '../components/training/seo';
 import Toolbar from '../components/training/toolbar';
@@ -26,9 +27,9 @@ const InstructionTemplate = ({
           <h1>{mdx.frontmatter.title}</h1>
           <LessonToc items={mdx.tableOfContents.items} />
           <main>
-            <article className="instruction-article article-content">
+            <LessonContent>
               <MDXRenderer>{mdx.body}</MDXRenderer>
-            </article>
+            </LessonContent>
           </main>
           {next && (
             <Toolbar>

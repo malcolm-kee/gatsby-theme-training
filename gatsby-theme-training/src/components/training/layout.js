@@ -1,16 +1,29 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { main } from './layout.module.scss';
-import Toc from './toc';
 import Appbar from './appbar';
+import MainContainer from './main-container';
+import Reset from './reset';
+import Toc from './toc';
 
 const LessonLayout = ({ children, pageContext, location }) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
   return pageContext && pageContext.isTrainingLesson ? (
     <>
-      <Appbar />
-      <div className={main}>
+      <Reset />
+      <Appbar>{data.site.siteMetadata.title}</Appbar>
+      <MainContainer>
         {children}
         <Toc sections={pageContext.lessonGroups} pathname={location.pathname} />
-      </div>
+      </MainContainer>
     </>
   ) : (
     children
