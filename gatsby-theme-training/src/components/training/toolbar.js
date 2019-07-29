@@ -7,7 +7,8 @@ const Toolbar = styled.div`
   display: flex;
   align-items: center;
   padding: 0 ${space}px;
-  justify-content: flex-end;
+  justify-content: ${({ align = 'right' }) =>
+    align === 'right' ? 'flex-end' : 'center'};
 `;
 
 export default Toolbar;

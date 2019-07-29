@@ -7,6 +7,7 @@ import InlineCode from './inline-code';
 import MainContainer from './main-container';
 import Reset from './reset';
 import Toc from './toc';
+import Protected from './protected';
 
 const mdxComponents = {
   code: CodeRenderer,
@@ -28,10 +29,15 @@ const LessonLayout = ({ children, pageContext, location }) => {
     <MDXProvider components={mdxComponents}>
       <Reset />
       <Appbar>{data.site.siteMetadata.title}</Appbar>
-      <MainContainer>
-        {children}
-        <Toc sections={pageContext.lessonGroups} pathname={location.pathname} />
-      </MainContainer>
+      <Protected>
+        <MainContainer>
+          {children}
+          <Toc
+            sections={pageContext.lessonGroups}
+            pathname={location.pathname}
+          />
+        </MainContainer>
+      </Protected>
     </MDXProvider>
   ) : (
     children

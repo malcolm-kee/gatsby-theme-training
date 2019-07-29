@@ -29,3 +29,5 @@ import { Button } from 'gatsby-theme-training';
 - ChevronIcon
 - EditIcon
 - EyeIcon
+- LockIcon
+- Protected

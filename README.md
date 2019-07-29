@@ -17,7 +17,7 @@ yarn add gatsby-theme-training
 You can import the following components from this plugin, e.g.
 
 ```js
-import { Button } from "gatsby-theme-training";
+import { Button } from 'gatsby-theme-training';
 ```
 
 - Appbar
@@ -29,3 +29,5 @@ import { Button } from "gatsby-theme-training";
 - ChevronIcon
 - EditIcon
 - EyeIcon
+- LockIcon
+- Protected

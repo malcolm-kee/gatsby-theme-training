@@ -9,11 +9,7 @@ import LessonToc from '../components/training/lesson-toc';
 import Seo from '../components/training/seo';
 import Toolbar from '../components/training/toolbar';
 
-const InstructionTemplate = ({
-  data: { mdx },
-  pageContext: { next },
-  location,
-}) => {
+const LessonTemplate = ({ data: { mdx }, pageContext: { next }, location }) => {
   return (
     <>
       <Seo
@@ -58,7 +54,7 @@ const rightArrow = (
   />
 );
 
-export default InstructionTemplate;
+export default LessonTemplate;
 
 export const pageQuery = graphql`
   query LessonById($id: String!) {

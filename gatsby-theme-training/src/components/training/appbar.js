@@ -26,6 +26,7 @@ const Appbar = ({
         align-items: center;
         background-color: ${backgroundColor};
         color: ${color};
+        z-index: 2;
       `}
     >
       <Link
