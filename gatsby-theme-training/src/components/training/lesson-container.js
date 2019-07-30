@@ -16,7 +16,7 @@ const LessonContainer = styled.div`
   p,
   li {
     font-weight: 400;
-    line-height: 1.6em;
+    line-height: 1.6;
     color: rgba(0, 0, 0, 0.87);
   }
 `;

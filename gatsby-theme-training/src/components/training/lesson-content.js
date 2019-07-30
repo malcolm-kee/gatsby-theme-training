@@ -14,6 +14,7 @@ const LessonContent = styled.article`
   }
 
   > p {
+    margin-top: 2em;
     text-align: justify;
   }
 
