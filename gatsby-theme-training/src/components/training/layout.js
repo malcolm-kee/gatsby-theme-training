@@ -40,7 +40,7 @@ const LessonLayout = ({ children, pageContext, location }) => {
       </Protected>
     </MDXProvider>
   ) : (
-    children
+    <>{children}</>
   );
 };
 
