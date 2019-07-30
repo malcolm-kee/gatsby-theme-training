@@ -97,3 +97,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  // switching buble to '@philpl/buble' to reduce bundle size
+  // but does not support ESNext regex. See https://github.com/FormidableLabs/react-live#what-bundle-size-can-i-expect
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        buble: '@philpl/buble',
+      },
+    },
+  });
+};
