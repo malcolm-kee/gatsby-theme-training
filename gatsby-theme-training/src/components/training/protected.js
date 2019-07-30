@@ -14,17 +14,19 @@ const Container = styled.div`
 const Protected = ({ children }) => {
   const { isLoggedIn, login } = useAuthContext();
 
-  return isLoggedIn ? (
-    <>{children}</>
-  ) : (
+  return (
     <div>
-      <Container>
-        <LockIcon />
-        <p>Login required to access the content.</p>
-        <Toolbar align="center">
-          <Button onClick={login}>Login</Button>
-        </Toolbar>
-      </Container>
+      {isLoggedIn ? (
+        children
+      ) : (
+        <Container>
+          <LockIcon />
+          <p>Login required to access the content.</p>
+          <Toolbar align="center">
+            <Button onClick={login}>Login</Button>
+          </Toolbar>
+        </Container>
+      )}
     </div>
   );
 };

@@ -14,11 +14,15 @@ if (typeof window !== 'undefined') {
 }
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = React.useState(netlifyIdentity.currentUser());
+  const [user, setUser] = React.useState(null);
 
   React.useEffect(() => {
     netlifyIdentity.on('login', setUser);
     netlifyIdentity.on('logout', () => setUser(null));
+    const currentUser = netlifyIdentity.currentUser();
+    if (currentUser && !user) {
+      setUser(currentUser);
+    }
   }, []);
 
   const value = React.useMemo(() => {

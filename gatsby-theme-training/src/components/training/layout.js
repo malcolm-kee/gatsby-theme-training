@@ -1,18 +1,10 @@
-import { MDXProvider } from '@mdx-js/react';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Appbar from './appbar';
-import CodeRenderer from './code-renderer';
-import InlineCode from './inline-code';
 import MainContainer from './main-container';
+import Protected from './protected';
 import Reset from './reset';
 import Toc from './toc';
-import Protected from './protected';
-
-const mdxComponents = {
-  code: CodeRenderer,
-  inlineCode: InlineCode,
-};
 
 const LessonLayout = ({ children, pageContext, location }) => {
   const data = useStaticQuery(graphql`
@@ -26,7 +18,7 @@ const LessonLayout = ({ children, pageContext, location }) => {
   `);
 
   return pageContext && pageContext.isTrainingLesson ? (
-    <MDXProvider components={mdxComponents}>
+    <>
       <Reset />
       <Appbar>{data.site.siteMetadata.title}</Appbar>
       <Protected>
@@ -38,7 +30,7 @@ const LessonLayout = ({ children, pageContext, location }) => {
           />
         </MainContainer>
       </Protected>
-    </MDXProvider>
+    </>
   ) : (
     <>{children}</>
   );

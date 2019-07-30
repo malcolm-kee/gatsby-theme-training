@@ -1,6 +1,6 @@
 const React = require('react');
-const AuthProvider = require('./components/training/auth').AuthProvider;
+const Providers = require('./components/training/providers').default;
 
 module.exports = function wrapRoot({ element }) {
-  return React.createElement(AuthProvider, null, element);
+  return React.createElement(Providers, null, element);
 };
