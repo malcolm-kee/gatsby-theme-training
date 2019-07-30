@@ -6,6 +6,12 @@ function createNodeFields({ node, actions, fileNode }) {
   const { createNodeField } = actions;
   const frontMatterPath = node.frontmatter && node.frontmatter.path;
 
+  createNodeField({
+    node,
+    name: 'isTrainingLesson',
+    value: true,
+  });
+
   if (frontMatterPath) {
     createNodeField({
       node,
@@ -54,7 +60,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allMdx(sort: { fields: [fileAbsolutePath] }) {
+      allMdx(
+        sort: { fields: [fileAbsolutePath] }
+        filter: { fields: { isTrainingLesson: { eq: true } } }
+      ) {
         edges {
           node {
             id
