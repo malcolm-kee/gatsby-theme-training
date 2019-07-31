@@ -2,6 +2,18 @@ import styled from '@emotion/styled';
 import { space } from './styles';
 
 const LessonContent = styled.article`
+  /* temp fix based on https://github.com/gatsbyjs/gatsby/issues/15486
+  watching that issue for proper fix */
+  .gatsby-resp-image-image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   > h2 {
     border-bottom: 1px solid;
     border-bottom-color: inherit;

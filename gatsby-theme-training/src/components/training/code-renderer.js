@@ -89,6 +89,7 @@ const CodeLiveEditor = ({ code, theme, language, noInline, fileName }) => {
               <EditIcon />
             </CodeIcon>
             {fileName && <span>{fileName}</span>}
+            <span />
           </CodeHeader>
           <CodeLanguage>{language}</CodeLanguage>
         </CodeHeaderContainer>
@@ -192,6 +193,7 @@ const CodeSnippet = React.memo(function CodeSnippetComponent({
               <EyeIcon />
             </CodeIcon>
             {fileName && <span>{fileName}</span>}
+            <span />
           </CodeHeader>
           <CodeLanguage>{shortenLanguage(language)}</CodeLanguage>
         </CodeHeaderContainer>
