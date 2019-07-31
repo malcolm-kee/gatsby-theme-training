@@ -40,6 +40,20 @@ const LessonContent = styled.article`
     margin-bottom: 0.5em;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    &[id]:before {
+      display: block;
+      content: ' ';
+      margin-top: -60px;
+      height: 60px;
+      visibility: hidden;
+    }
+  }
+
   aside {
     font-style: italic;
     padding: 0 ${space}px;

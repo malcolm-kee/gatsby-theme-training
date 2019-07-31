@@ -11,6 +11,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
+  text-align: center;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -42,7 +43,9 @@ const Protected = ({ children }) => {
             <LockIcon />
             <p>Login required to access the content.</p>
             <Toolbar align="center">
-              <Button onClick={login}>Login</Button>
+              <Button variant="bubble" onClick={login}>
+                Login
+              </Button>
             </Toolbar>
           </Content>
         </Container>

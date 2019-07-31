@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import { primaryColor, primaryLight } from './styles';
 
 const Wrapper = styled.div`
   line-height: 1.3;
@@ -13,6 +14,14 @@ const List = styled.ul`
 
 const Item = styled.li`
   margin-bottom: 0.8rem;
+  > a {
+    text-decoration: none;
+    color: ${primaryColor};
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: ${primaryLight};
+    }
+  }
 `;
 
 const LessonToc = ({ items }) => {

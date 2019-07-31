@@ -2,11 +2,11 @@
 import { css, jsx } from '@emotion/core';
 import { Link } from 'gatsby';
 import { getContrastTextColor } from '../../lib/color';
-import { appbarHeight, space } from './styles';
+import { appbarHeight, space, primaryColor } from './styles';
 
 const Appbar = ({
   linkTarget = '/',
-  backgroundColor = '#e44d26',
+  backgroundColor = primaryColor,
   color = getContrastTextColor(backgroundColor),
   children,
 }) => {
