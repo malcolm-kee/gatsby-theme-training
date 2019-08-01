@@ -10,3 +10,4 @@ export { default as Protected } from './components/training/protected';
 export { default as Reset } from './components/training/reset';
 export { default as Seo } from './components/training/seo';
 export { default as Toolbar } from './components/training/toolbar';
+export { default as NotFoundPage } from './pages/404';
