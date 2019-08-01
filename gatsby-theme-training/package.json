@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-training",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "A Gatsby theme for training materials",
   "main": "index.js",
   "module": "index.es.js",
