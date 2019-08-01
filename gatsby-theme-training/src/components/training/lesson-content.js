@@ -15,14 +15,18 @@ const LessonContent = styled.article`
   }
 
   > h2 {
-    border-bottom: 1px solid;
-    border-bottom-color: inherit;
+    border-bottom: 1px solid #bbbbbb;
     line-height: 2;
     font-weight: 700;
     font-size: 1.6rem;
     margin-top: 1em;
     margin-bottom: 0.5rem;
-    line-height: 2;
+  }
+
+  > h3,
+  > h4,
+  > h5 {
+    margin-top: 2rem;
   }
 
   > p {

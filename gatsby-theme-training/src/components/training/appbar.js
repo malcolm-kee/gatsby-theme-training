@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery } from 'gatsby';
 import { getContrastTextColor } from '../../lib/color';
 import { appbarHeight, space, primaryColor } from './styles';
 
@@ -10,6 +10,16 @@ const Appbar = ({
   color = getContrastTextColor(backgroundColor),
   children,
 }) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
   return (
     <header
       css={css`
@@ -36,7 +46,7 @@ const Appbar = ({
         `}
         to={linkTarget}
       >
-        {children}
+        {data.site.siteMetadata.title}
       </Link>
     </header>
   );

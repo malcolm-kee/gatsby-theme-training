@@ -1,28 +1,20 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import {
   Appbar,
   Button,
   MainContainer,
   Reset,
+  Seo,
   Toolbar,
 } from 'gatsby-theme-training';
 import React from 'react';
 
 export default function Homepage() {
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <div>
+      <Seo />
       <Reset />
-      <Appbar>{data.site.siteMetadata.title}</Appbar>
+      <Appbar />
       <MainContainer>
         <div>
           Homepage in a user's site
