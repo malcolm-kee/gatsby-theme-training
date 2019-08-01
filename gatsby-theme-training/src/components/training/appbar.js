@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import { Link, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { getContrastTextColor } from '../../lib/color';
-import { appbarHeight, space, primaryColor } from './styles';
+import { appbarHeight, primaryColor, space } from './styles';
 
 const Appbar = ({
   linkTarget = '/',
   backgroundColor = primaryColor,
   color = getContrastTextColor(backgroundColor),
-  children,
 }) => {
   const data = useStaticQuery(graphql`
     {

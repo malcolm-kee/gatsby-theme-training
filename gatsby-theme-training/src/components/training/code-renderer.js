@@ -143,7 +143,7 @@ const CodeSnippetContainer = styled(CodeLiveEditorWrapper)`
   }
 `;
 
-const CodeSnippet = React.memo(function CodeSnippetComponent({
+function CodeSnippetComponent({
   code,
   language,
   theme,
@@ -164,6 +164,7 @@ const CodeSnippet = React.memo(function CodeSnippetComponent({
             ({ line, isHighlighted }, i) => {
               return (
                 <div
+                  key={i}
                   {...getLineProps({
                     line,
                     key: i,
@@ -173,7 +174,9 @@ const CodeSnippet = React.memo(function CodeSnippetComponent({
                   })}
                 >
                   {line.map((token, key) => {
-                    return <span {...getTokenProps({ token, key })} />;
+                    return (
+                      <span key={key} {...getTokenProps({ token, key })} />
+                    );
                   })}
                 </div>
               );
@@ -201,7 +204,9 @@ const CodeSnippet = React.memo(function CodeSnippetComponent({
       {highlightedCode}
     </CodeSnippetContainer>
   );
-});
+}
+
+const CodeSnippet = React.memo(CodeSnippetComponent);
 
 /**
  *

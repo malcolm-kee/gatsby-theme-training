@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { primaryColor, primaryLight } from './styles';
+import React from 'react';
 import { hasClass } from '../../lib/cx';
+import { primaryColor, primaryLight } from './styles';
 
 const StyledLink = styled.a`
   color: inherit;

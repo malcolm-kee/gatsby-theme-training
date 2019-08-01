@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-training",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A Gatsby theme for training materials",
   "main": "index.js",
   "module": "index.es.js",
@@ -13,7 +13,8 @@
   "scripts": {
     "build": "rollup -c",
     "prepublishOnly": "rollup -c",
-    "develop": "rollup -c -w"
+    "develop": "rollup -c -w",
+    "lint": "eslint ."
   },
   "author": "Malcolm Kee <malcolm.keeweesiong@gmail.com>",
   "license": "MIT",
@@ -62,7 +63,10 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@modular-css/rollup": "^24.2.2",
+    "babel-eslint": "^10.0.2",
     "babel-plugin-emotion": "^10.0.14",
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
