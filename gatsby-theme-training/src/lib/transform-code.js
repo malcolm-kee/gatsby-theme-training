@@ -4,8 +4,8 @@ import { includes } from './array';
  * wrap js code with a React component that expose `console.log` and
  * renders the logs
  */
-export const wrapJsCode = code => `
-  class CodeWrapper extends React.Component {
+export const wrapJsCode = code =>
+  `class CodeWrapper extends React.Component {
       constructor(props) {
           super(props);
           this.state = {
@@ -41,8 +41,7 @@ export const wrapJsCode = code => `
               </React.Fragment>
           );
       }
-  }
-`;
+  }`;
 
 /**
  * transformCodeToken to identify highlight comments:

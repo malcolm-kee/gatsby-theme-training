@@ -1,12 +1,10 @@
 import { Link } from 'gatsby';
-import {
-  Appbar,
-  Button,
-  MainContainer,
-  Reset,
-  Seo,
-  Toolbar,
-} from 'gatsby-theme-training';
+import Appbar from 'gatsby-theme-training/src/components/training/appbar';
+import Button from 'gatsby-theme-training/src/components/training/button';
+import MainContainer from 'gatsby-theme-training/src/components/training/main-container';
+import Reset from 'gatsby-theme-training/src/components/training/reset';
+import Seo from 'gatsby-theme-training/src/components/training/seo';
+import Toolbar from 'gatsby-theme-training/src/components/training/toolbar';
 import React from 'react';
 
 export default function Homepage() {

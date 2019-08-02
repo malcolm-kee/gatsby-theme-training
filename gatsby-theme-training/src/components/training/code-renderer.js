@@ -9,7 +9,7 @@ import EyeIcon from './eye-icon';
 import InlineCode from './inline-code';
 import { fontFamily, space } from './styles';
 
-const injectedGlobals = { sanitize, shallowConcat, ReactDOM };
+const injectedGlobals = { sanitize, shallowConcat, ReactDOM, ajax };
 
 const CodeLiveEditorWrapper = styled.div`
   padding: 0 ${space / 2}px ${space / 2}px;
@@ -111,6 +111,36 @@ function sanitize(data) {
     : typeof data === 'string'
     ? `"${data}"`
     : data;
+}
+
+function noop() {}
+
+function ajax(url, options) {
+  var opts = options || {};
+  var onSuccess = opts.onSuccess || noop;
+  var onError = opts.onError || noop;
+  var dataType = opts.dataType || 'json';
+  var method = opts.method || 'GET';
+
+  var request = new XMLHttpRequest();
+  request.open(method, url);
+  if (dataType === 'json') {
+    request.overrideMimeType('application/json');
+    request.responseType = 'json';
+    request.setRequestHeader('Accept', 'application/json');
+  }
+
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      onSuccess(request.response);
+    } else {
+      onError(request.response);
+    }
+  };
+
+  request.onerror = onError;
+
+  request.send(opts.body);
 }
 
 function shallowConcat(targetArr, item) {
@@ -301,10 +331,12 @@ export default function CodeRenderer({
 }) {
   const language = className && className.split('-').pop();
 
+  const code = typeof children === 'string' ? children.trim() : children;
+
   return live &&
     (language === 'js' || language === 'jsx' || language === 'javascript') ? (
     <CodeLiveEditor
-      code={children}
+      code={code}
       theme={githubTheme}
       language={language}
       noInline={noInline}
@@ -312,7 +344,7 @@ export default function CodeRenderer({
     />
   ) : language ? (
     <CodeSnippet
-      code={children}
+      code={code}
       language={language}
       theme={githubTheme}
       fileName={fileName}
