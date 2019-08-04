@@ -30,12 +30,15 @@ const Content = styled.div`
   }
 `;
 
+// eslint-disable-next-line no-undef
+const isLocal = process.env.NODE_ENV === 'development';
+
 const Protected = ({ children }) => {
   const { isLoggedIn, login } = useAuthContext();
 
   return (
     <div>
-      {isLoggedIn ? (
+      {isLoggedIn || isLocal ? (
         children
       ) : (
         <Container>
