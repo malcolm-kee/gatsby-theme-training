@@ -17,7 +17,7 @@ export default function Homepage() {
         <div>
           Homepage in a user's site
           <Toolbar>
-            <Button component={Link} variant="bubble" to="/what-is-react">
+            <Button component={Link} variant="primary" to="/what-is-react">
               Start
             </Button>
           </Toolbar>

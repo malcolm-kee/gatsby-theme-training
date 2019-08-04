@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import { primaryColor, primaryDark } from './styles';
 
 const StyledBtn = styled.button`
   box-sizing: border-box;
@@ -41,13 +42,17 @@ const StyledBtn = styled.button`
   }
   ${({ variant }) =>
     variant === 'primary'
-      ? `
-    border-color: transparent;
+      ? `border-color: rgba(0,0,0,0);
+      color: #fff;
+      background-color: ${primaryColor};
+      box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+      border-width: 2px;
+      border-style: solid;
     &:focus {
-      border-color: hsl(12, 78%, 55%);
+      border-color: #fff;
     }
     &:hover {
-      color: #aa1100;
+      background-color: ${primaryDark};
     }`
       : variant === 'bubble'
       ? `

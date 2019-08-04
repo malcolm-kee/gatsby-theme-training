@@ -135,6 +135,7 @@ const TableOfContentsSection = ({ nodes, title, pathname }) => {
 const Nav = styled.nav`
   padding: ${space}px 0;
   background-color: #eeeeee;
+  overflow-y: auto;
 
   @media screen and (min-width: ${mobileWidth}) {
     position: fixed;

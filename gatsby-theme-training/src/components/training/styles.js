@@ -6,3 +6,4 @@ export const fontFamily = `'Roboto', 'Helvetica', 'Arial', 'Microsoft Yahei', '�
 '华文细黑', sans-serif`;
 export const primaryColor = '#e44d26';
 export const primaryLight = 'hsl(12, 78%, 75%)';
+export const primaryDark = '#9f2f14';
