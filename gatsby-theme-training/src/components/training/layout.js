@@ -11,9 +11,10 @@ import Toc from './toc';
 const Container = styled(MainContainer)`
   @media screen and (min-width: ${mobileWidth}) {
     display: grid;
-    grid-template-columns: 1fr ${tocWidth};
+    grid-template-columns: minmax(0, 1fr) ${tocWidth};
   }
 `;
+// grid column based on https://css-tricks.com/preventing-a-grid-blowout/
 
 const LessonLayout = ({ children, pageContext, location }) => {
   const data = useStaticQuery(graphql`
