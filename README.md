@@ -1,33 +1,35 @@
 # gatsby-theme-training
 
+Gatsby theme to create training materials.
+
 ## Installation
 
 ```bash
 yarn add gatsby-theme-training
 ```
 
+Then add to your `gatsby-config.js`
+
+```js
+module.exports = {
+  plugins: [`gatsby-theme-training`]
+};
+```
+
+## Features
+
+### Included plugins
+
+- `gatsby-plugin-sass`
+- `gatsby-plugin-emotion`
+- `gatsby-plugin-mdx`
+- `gatsby-plugin-netlify`
+- `gatsby-plugin-sharp`
+- `gatsby-plugin-react-helmet`
+
 ## Usage
 
 ### Theme options
 
 - lessonPath: Location of lessons. Default to `'lessons'`.
-
-### Components
-
-You can import the following components from this plugin, e.g.
-
-```js
-import { Button } from 'gatsby-theme-training';
-```
-
-- Appbar
-- Button
-- Seo
-- MainContainer
-- Reset
-- Toolbar
-- ChevronIcon
-- EditIcon
-- EyeIcon
-- LockIcon
-- Protected
+- disableAuth: Disable netlify identify.

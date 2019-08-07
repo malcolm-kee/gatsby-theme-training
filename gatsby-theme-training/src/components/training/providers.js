@@ -13,9 +13,9 @@ const mdxComponents = {
   Exercise,
 };
 
-const Providers = ({ children }) => {
+const Providers = ({ children, disableAuth }) => {
   return (
-    <AuthProvider>
+    <AuthProvider disableAuth={disableAuth}>
       <MDXProvider components={mdxComponents}>{children}</MDXProvider>
     </AuthProvider>
   );

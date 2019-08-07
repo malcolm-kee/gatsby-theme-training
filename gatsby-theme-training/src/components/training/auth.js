@@ -3,6 +3,9 @@ import React from 'react';
 
 const noop = () => {};
 
+// eslint-disable-next-line no-undef
+const isLocal = process.env.NODE_ENV === 'development';
+
 const AuthContext = React.createContext({
   user: null,
   login: noop,
@@ -13,7 +16,7 @@ if (typeof window !== 'undefined') {
   netlifyIdentity.init();
 }
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children, disableAuth }) => {
   const [user, setUser] = React.useState(null);
 
   React.useEffect(() => {
@@ -28,7 +31,7 @@ export const AuthProvider = ({ children }) => {
   const value = React.useMemo(() => {
     return {
       user,
-      isLoggedIn: user !== null,
+      isLoggedIn: isLocal || disableAuth || user !== null,
       login: () => netlifyIdentity.open(),
       logout: () => netlifyIdentity.logout(),
     };
