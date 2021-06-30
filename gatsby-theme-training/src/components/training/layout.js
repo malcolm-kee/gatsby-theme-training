@@ -22,15 +22,20 @@ const LessonLayout = ({ children, pageContext, location }) => {
       site {
         siteMetadata {
           title
+          themeColor
         }
       }
     }
   `);
 
+  const siteMetadata = data.site.siteMetadata;
+
   return pageContext && pageContext.isTrainingLesson ? (
     <>
       <Reset />
-      <Appbar>{data.site.siteMetadata.title}</Appbar>
+      <Appbar backgroundColor={siteMetadata.themeColor}>
+        {siteMetadata.title}
+      </Appbar>
       <Protected>
         <Container>
           {children}
