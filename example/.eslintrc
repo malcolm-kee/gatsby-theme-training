@@ -1,9 +1,17 @@
 {
+  "parser": "babel-eslint",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "sourceType": "module"
   },
   "env": {
     "es6": true,
-    "commonjs": true
-  }
+    "commonjs": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

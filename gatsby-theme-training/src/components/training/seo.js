@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 const Seo = ({ title, description, keywords, url }) => {
   const {
@@ -14,6 +14,7 @@ const Seo = ({ title, description, keywords, url }) => {
             author
             siteUrl
             description
+            themeColor
           }
         }
       }
@@ -30,6 +31,9 @@ const Seo = ({ title, description, keywords, url }) => {
       <title>{displayTitle}</title>
       <meta name="author" content={siteMetadata.author} />
       <meta name="description" content={displayDescription} />
+      {siteMetadata.themeColor && (
+        <meta name="theme-color" content={siteMetadata.themeColor} />
+      )}
       {displayKeywords && <meta name="keywords" content={displayKeywords} />}
       {url && (
         <meta property="og:url" content={`${siteMetadata.siteUrl}${url}`} />

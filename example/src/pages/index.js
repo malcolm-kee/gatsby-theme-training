@@ -5,7 +5,7 @@ import MainContainer from 'gatsby-theme-training/src/components/training/main-co
 import Reset from 'gatsby-theme-training/src/components/training/reset';
 import Seo from 'gatsby-theme-training/src/components/training/seo';
 import Toolbar from 'gatsby-theme-training/src/components/training/toolbar';
-import React from 'react';
+import * as React from 'react';
 
 export default function Homepage() {
   return (
@@ -15,7 +15,7 @@ export default function Homepage() {
       <Appbar />
       <MainContainer>
         <div>
-          Homepage in a user's site
+          Homepage in a user{"'"}s site
           <Toolbar>
             <Button component={Link} variant="primary" to="/what-is-react">
               Start

@@ -4,6 +4,7 @@ module.exports = {
     author: `Malcolm Kee`,
     siteUrl: `http://siteurlplaceholder.com`,
     description: `Training description placeholder`,
+    themeColor: '#61dafb',
   },
   plugins: [
     {

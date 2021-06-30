@@ -5,8 +5,11 @@ module.exports = ({ lessonPath = 'lessons' }) => {
       author: `Author Placeholder`,
       siteUrl: `http://siteurlplaceholder.com`,
       description: `Training description placeholder`,
+      themeColor: '#e44d26',
     },
     plugins: [
+      `gatsby-plugin-sharp`,
+      'gatsby-remark-images',
       `gatsby-plugin-sass`,
       {
         resolve: `gatsby-source-filesystem`,
@@ -17,7 +20,6 @@ module.exports = ({ lessonPath = 'lessons' }) => {
       },
       `gatsby-plugin-emotion`,
       `gatsby-plugin-react-helmet`,
-      `gatsby-plugin-sharp`,
       {
         resolve: `gatsby-plugin-mdx`,
         options: {
@@ -34,7 +36,6 @@ module.exports = ({ lessonPath = 'lessons' }) => {
               resolve: `gatsby-remark-images`,
               options: {
                 maxWidth: 800,
-                withWebp: true,
               },
             },
           ],
